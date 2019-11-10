@@ -4,10 +4,9 @@ class Show < ActiveRecord::Base
   belongs_to :network
 
   def actors_list
-  #  actor.shows << self.actors
-   binding.pry
-  #  Show.create(name: ?)
-
+    self.characters.map do |a|
+      a.actor.full_name 
+    end 
   end
 
 
